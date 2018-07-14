@@ -1,0 +1,128 @@
+_RB1 31 0 ABS
+_PS0 408 0 ABS
+_PS1 409 0 ABS
+_PS2 40A 0 ABS
+__S0 2008 0 ABS
+__S1 72 0 ABS
+__S2 0 0 ABS
+_PSA 40B 0 ABS
+__Hintentry 0 0 CODE
+__Lintentry 0 0 CODE
+_TMR0 1 0 ABS
+_T0IF 5A 0 ABS
+_T0SE 40C 0 ABS
+_T0CS 40D 0 ABS
+_main 7A9 0 CODE
+btemp 7E 0 ABS
+_exit 0 0 CODE
+start 0 0 CODE
+_TRISB 86 0 ABS
+reset_vec 0 0 CODE
+wtemp0 7E 0 ABS
+__Hconfig 2008 0 CONFIG
+__Lconfig 2007 0 CONFIG
+__Hram 0 0 ABS
+__Lram 0 0 ABS
+?_main 70 0 COMMON
+__Hfunctab 0 0 CODE
+__Lfunctab 0 0 CODE
+__Hcommon 0 0 ABS
+__Lcommon 0 0 ABS
+__Heeprom_data 0 0 EEDATA
+__Leeprom_data 0 0 EEDATA
+__Habs1 0 0 ABS
+__Labs1 0 0 ABS
+__Hsfr0 0 0 ABS
+__Lsfr0 0 0 ABS
+__Hsfr1 0 0 ABS
+__Lsfr1 0 0 ABS
+__Hsfr2 0 0 ABS
+__Lsfr2 0 0 ABS
+__Hsfr3 0 0 ABS
+__Lsfr3 0 0 ABS
+__Hcode 0 0 ABS
+__Lcode 0 0 ABS
+??_main 70 0 COMMON
+__Hinit 0 0 CODE
+__Linit 0 0 CODE
+__end_of_main 800 0 CODE
+__Htext 0 0 ABS
+__Ltext 0 0 ABS
+end_of_initialization 7A5 0 CODE
+__Hstrings 0 0 ABS
+__Lstrings 0 0 ABS
+__Hbank0 0 0 ABS
+__Lbank0 0 0 ABS
+__Hbank1 0 0 ABS
+__Lbank1 0 0 ABS
+__Hbank2 0 0 ABS
+__Lbank2 0 0 ABS
+__Hbank3 0 0 ABS
+__Lbank3 0 0 ABS
+__Hpowerup 0 0 CODE
+__Lpowerup 0 0 CODE
+main@count 70 0 COMMON
+__Hclrtext 0 0 ABS
+__Lclrtext 0 0 ABS
+__Hidloc 0 0 IDLOC
+__Lidloc 0 0 IDLOC
+__Hcinit 0 0 ABS
+__Lcinit 0 0 ABS
+__size_of_main 0 0 ABS
+__Hend_init 3 0 CODE
+__Lend_init 0 0 CODE
+__Hreset_vec 0 0 CODE
+__Lreset_vec 0 0 CODE
+intlevel0 0 0 CODE
+intlevel1 0 0 CODE
+intlevel2 0 0 CODE
+intlevel3 0 0 CODE
+intlevel4 0 0 CODE
+intlevel5 0 0 CODE
+__HcstackCOMMON 0 0 ABS
+__LcstackCOMMON 0 0 ABS
+__pcstackCOMMON 70 0 COMMON
+start_initialization 7A5 0 CODE
+__Hmaintext 0 0 ABS
+__Lmaintext 0 0 ABS
+__pmaintext 7A9 0 CODE
+%segments
+reset_vec 0 5 CODE 0
+config 400E 400F CONFIG 400E
+cstackCOMMON 70 71 COMMON 70
+maintext F52 FFF CODE F52
+cinit F4A F51 CODE F4A
+%locals
+startup.obj
+startup.as
+65 0 0 CODE
+timer0 led blink.obj
+C:\Users\Kunal Kapoor\MPLAB-34343434projects_1\Timer 0\main.h
+4 2007 0 CONFIG
+C:\Users\Kunal Kapoor\MPLAB-34343434projects_1\Timer 0\main.c
+6 7A9 0 CODE
+8 7AC 0 CODE
+9 7AD 0 CODE
+10 7AE 0 CODE
+11 7AF 0 CODE
+13 7B2 0 CODE
+14 7B5 0 CODE
+15 7B6 0 CODE
+17 7B7 0 CODE
+21 7BC 0 CODE
+22 7BF 0 CODE
+23 7C3 0 CODE
+24 7C4 0 CODE
+25 7C9 0 CODE
+23 7CB 0 CODE
+28 7DB 0 CODE
+29 7DE 0 CODE
+30 7E2 0 CODE
+31 7E3 0 CODE
+32 7E8 0 CODE
+30 7EA 0 CODE
+19 7FC 0 CODE
+38 7FD 0 CODE
+timer0 led blink.as
+82 7A5 0 CODE
+83 7A6 0 CODE

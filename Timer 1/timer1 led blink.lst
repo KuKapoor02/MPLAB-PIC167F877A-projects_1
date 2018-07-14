@@ -1,0 +1,444 @@
+
+
+HI-TECH Software PIC LITE Macro Assembler V9.80 build 6738 
+                                                                                               Sat Jul 14 05:54:38 2018
+
+HI-TECH Software Omniscient Code Generator (Lite mode) build 6738
+     1  0000                     opt subtitle "HI-TECH Software Omniscient Code Generator (Lite mode) build 6738"
+     2                           
+     3                           opt pagewidth 120
+     4                           
+     5                           	opt lm
+     6                           
+     7                           	processor	16F877A
+     8                           clrc	macro
+     9                           	bcf	3,0
+    10  0000                     	endm
+    11                           clrz	macro
+    12                           	bcf	3,2
+    13  0000                     	endm
+    14                           setc	macro
+    15                           	bsf	3,0
+    16  0000                     	endm
+    17                           setz	macro
+    18                           	bsf	3,2
+    19  0000                     	endm
+    20                           skipc	macro
+    21                           	btfss	3,0
+    22  0000                     	endm
+    23                           skipz	macro
+    24                           	btfss	3,2
+    25  0000                     	endm
+    26                           skipnc	macro
+    27                           	btfsc	3,0
+    28  0000                     	endm
+    29                           skipnz	macro
+    30                           	btfsc	3,2
+    31  0000                     	endm
+    32  0000                     indf	equ	0
+    33  0000                     indf0	equ	0
+    34  0002                     pc	equ	2
+    35  0002                     pcl	equ	2
+    36  0003                     status	equ	3
+    37  0004                     fsr	equ	4
+    38  0004                     fsr0	equ	4
+    39  0001                     c	equ	1
+    40  0000                     z	equ	0
+    41  000A                     pclath	equ	10
+    42                           # 4 "C:\Users\Kunal Kapoor\MPLAB-34343434projects_1\Timer 1\main.h"
+    43                           	psect config,class=CONFIG,delta=2 ;#
+    44                           # 4 "C:\Users\Kunal Kapoor\MPLAB-34343434projects_1\Timer 1\main.h"
+    45  2007  2F0A               	dw 0X2F0A ;#
+    46                           	FNROOT	_main
+    47                           	global	_RB0
+    48                           psect	maintext,global,class=CODE,delta=2
+    49                           global __pmaintext
+    50  07AD                     __pmaintext:
+    51  0030                     _RB0	set	48
+    52                           	global	_T1CKPS0
+    53  0084                     _T1CKPS0	set	132
+    54                           	global	_T1CKPS1
+    55  0085                     _T1CKPS1	set	133
+    56                           	global	_T1OSCEN
+    57  0083                     _T1OSCEN	set	131
+    58                           	global	_T1SYNC
+    59  0082                     _T1SYNC	set	130
+    60                           	global	_TMR1CS
+    61  0081                     _TMR1CS	set	129
+    62                           	global	_TMR1IF
+    63  0060                     _TMR1IF	set	96
+    64                           	global	_TMR1ON
+    65  0080                     _TMR1ON	set	128
+    66                           	global	_TRISB
+    67  0086                     _TRISB	set	134
+    68                           	file	"timer1 led blink.as"
+    69                           	line	#
+    70                           psect cinit,class=CODE,delta=2
+    71                           global start_initialization
+    72  07A9                     start_initialization:
+    73                           
+    74                           psect cinit,class=CODE,delta=2
+    75                           global end_of_initialization
+    76                           
+    77                           ;End of C runtime variable initialization code
+    78                           
+    79  07A9                     end_of_initialization:
+    80  07A9  0183               clrf status
+    81  07AA  120A  118A  2FAD   ljmp _main	;jump to C main() function
+    82                           psect	cstackCOMMON,class=COMMON,space=1
+    83                           global __pcstackCOMMON
+    84  0070                     __pcstackCOMMON:
+    85                           	global	?_main
+    86  0070                     ?_main:	; 0 bytes @ 0x0
+    87                           	global	??_main
+    88  0070                     ??_main:	; 0 bytes @ 0x0
+    89                           	global	main@count
+    90  0070                     main@count:	; 2 bytes @ 0x0
+    91  0070                     	ds	2
+    92 ;;Data sizes: Strings 0, constant 0, data 0, bss 0, persistent 0 stack 0
+    93 ;;Auto spaces:   Size  Autos    Used
+    94 ;; COMMON          14      2       2
+    95 ;; BANK0           80      0       0
+    96 ;; BANK1           80      0       0
+    97 ;; BANK3           96      0       0
+    98 ;; BANK2           96      0       0
+    99                           
+   100 ;;
+   101 ;; Pointer list with targets:
+   102                           
+   103                           
+   104                           
+   105 ;;
+   106 ;; Critical Paths under _main in COMMON
+   107 ;;
+   108 ;;   None.
+   109 ;;
+   110 ;; Critical Paths under _main in BANK0
+   111 ;;
+   112 ;;   None.
+   113 ;;
+   114 ;; Critical Paths under _main in BANK1
+   115 ;;
+   116 ;;   None.
+   117 ;;
+   118 ;; Critical Paths under _main in BANK3
+   119 ;;
+   120 ;;   None.
+   121 ;;
+   122 ;; Critical Paths under _main in BANK2
+   123 ;;
+   124 ;;   None.
+   125                           
+   126 ;;
+   127 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+   128 ;;
+   129                           
+   130 ;;
+   131 ;;Call Graph Tables:
+   132 ;;
+   133 ;; ---------------------------------------------------------------------------------
+   134 ;; (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+   135 ;; ---------------------------------------------------------------------------------
+   136 ;; (0) _main                                                 2     2      0      30
+   137 ;;                                              0 COMMON     2     2      0
+   138 ;; ---------------------------------------------------------------------------------
+   139 ;; Estimated maximum stack depth 0
+   140 ;; ---------------------------------------------------------------------------------
+   141                           
+   142 ;; Call Graph Graphs:
+   143                           
+   144 ;; _main (ROOT)
+   145 ;;
+   146                           
+   147 ;; Address spaces:
+   148                           
+   149 ;;Name               Size   Autos  Total    Cost      Usage
+   150 ;;BITCOMMON            E      0       0       0        0.0%
+   151 ;;EEDATA             100      0       0       0        0.0%
+   152 ;;NULL                 0      0       0       0        0.0%
+   153 ;;CODE                 0      0       0       0        0.0%
+   154 ;;COMMON               E      2       2       1       14.3%
+   155 ;;BITSFR0              0      0       0       1        0.0%
+   156 ;;SFR0                 0      0       0       1        0.0%
+   157 ;;BITSFR1              0      0       0       2        0.0%
+   158 ;;SFR1                 0      0       0       2        0.0%
+   159 ;;STACK                0      0       0       2        0.0%
+   160 ;;ABS                  0      0       0       3        0.0%
+   161 ;;BITBANK0            50      0       0       4        0.0%
+   162 ;;BITSFR3              0      0       0       4        0.0%
+   163 ;;SFR3                 0      0       0       4        0.0%
+   164 ;;BANK0               50      0       0       5        0.0%
+   165 ;;BITSFR2              0      0       0       5        0.0%
+   166 ;;SFR2                 0      0       0       5        0.0%
+   167 ;;BITBANK1            50      0       0       6        0.0%
+   168 ;;BANK1               50      0       0       7        0.0%
+   169 ;;BITBANK3            60      0       0       8        0.0%
+   170 ;;BANK3               60      0       0       9        0.0%
+   171 ;;BITBANK2            60      0       0      10        0.0%
+   172 ;;BANK2               60      0       0      11        0.0%
+   173 ;;DATA                 0      0       0      12        0.0%
+   174                           
+   175                           	global	_main
+   176                           psect	maintext
+   177                           
+   178 ;; *************** function _main *****************
+   179 ;; Defined at:
+   180 ;;		line 4 in file "C:\Users\Kunal Kapoor\MPLAB-34343434projects_1\Timer 1\main.c"
+   181 ;; Parameters:    Size  Location     Type
+   182 ;;		None
+   183 ;; Auto vars:     Size  Location     Type
+   184 ;;  count           2    0[COMMON] unsigned int 
+   185 ;; Return value:  Size  Location     Type
+   186 ;;		None               void
+   187 ;; Registers used:
+   188 ;;		wreg, status,2
+   189 ;; Tracked objects:
+   190 ;;		On entry : 17F/0
+   191 ;;		On exit  : 0/0
+   192 ;;		Unchanged: 0/0
+   193 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   194 ;;      Params:         0       0       0       0       0
+   195 ;;      Locals:         2       0       0       0       0
+   196 ;;      Temps:          0       0       0       0       0
+   197 ;;      Totals:         2       0       0       0       0
+   198 ;;Total ram usage:        2 bytes
+   199 ;; This function calls:
+   200 ;;		Nothing
+   201 ;; This function is called by:
+   202 ;;		Startup code after reset
+   203 ;; This function uses a non-reentrant model
+   204 ;;
+   205                           psect	maintext
+   206                           	file	"C:\Users\Kunal Kapoor\MPLAB-34343434projects_1\Timer 1\main.c"
+   207                           	line	4
+   208                           	global	__size_of_main
+   209  0053                     	__size_of_main	equ	__end_of_main-_main
+   210                           	
+   211  07AD                     _main:	
+   212                           	opt	stack 8
+   213                           ; Regs used in _main: [wreg+status,2]
+   214                           	line	6
+   215                           	
+   216  07AD                     l943:	
+   217                           ;main.c: 6: T1CKPS1=0;
+   218  07AD  1283               	bcf	status, 5	;RP0=0, select bank0
+   219  07AE  1303               	bcf	status, 6	;RP1=0, select bank0
+   220  07AF  1290               	bcf	(133/8),(133)&7
+   221                           	line	7
+   222                           ;main.c: 7: T1CKPS0=0;
+   223  07B0  1210               	bcf	(132/8),(132)&7
+   224                           	line	9
+   225                           ;main.c: 9: T1OSCEN=0;
+   226  07B1  1190               	bcf	(131/8),(131)&7
+   227                           	line	10
+   228                           ;main.c: 10: T1SYNC=1;
+   229  07B2  1510               	bsf	(130/8),(130)&7
+   230                           	line	11
+   231                           ;main.c: 11: TMR1CS=0;
+   232  07B3  1090               	bcf	(129/8),(129)&7
+   233                           	line	13
+   234                           ;main.c: 13: TMR1ON=1;
+   235  07B4  1410               	bsf	(128/8),(128)&7
+   236                           	line	15
+   237                           	
+   238  07B5                     l945:	
+   239                           ;main.c: 15: TRISB=0x00;
+   240  07B5  1683               	bsf	status, 5	;RP0=1, select bank1
+   241  07B6  1303               	bcf	status, 6	;RP1=0, select bank1
+   242  07B7  0186               	clrf	(134)^080h	;volatile
+   243                           	line	17
+   244                           	
+   245  07B8                     l947:	
+   246                           ;main.c: 17: unsigned int count=0;
+   247  07B8  3000               	movlw	low(0)
+   248  07B9  00F0               	movwf	(main@count)
+   249  07BA  3000               	movlw	high(0)
+   250  07BB  00F1               	movwf	((main@count))+1
+   251  07BC  2FBD               	goto	l949
+   252                           	line	20
+   253                           ;main.c: 20: while(1){
+   254                           	
+   255  07BD                     l559:	
+   256                           	line	22
+   257                           	
+   258  07BD                     l949:	
+   259                           ;main.c: 22: RB0=0;
+   260  07BD  1283               	bcf	status, 5	;RP0=0, select bank0
+   261  07BE  1006               	bcf	(48/8),(48)&7
+   262                           	line	23
+   263                           	
+   264  07BF                     l951:	
+   265                           ;main.c: 23: count=61;
+   266  07BF  303D               	movlw	low(03Dh)
+   267  07C0  00F0               	movwf	(main@count)
+   268  07C1  3000               	movlw	high(03Dh)
+   269  07C2  00F1               	movwf	((main@count))+1
+   270                           	line	24
+   271                           ;main.c: 24: while(count-->0){
+   272  07C3  2FCC               	goto	l953
+   273                           	
+   274  07C4                     l561:	
+   275                           	line	25
+   276                           ;main.c: 25: while(TMR1IF!=1);
+   277  07C4  2FC5               	goto	l562
+   278                           	
+   279  07C5                     l563:	
+   280                           	
+   281  07C5                     l562:	
+   282  07C5  1C0C               	btfss	(96/8),(96)&7
+   283  07C6  2FC8               	goto	u11
+   284  07C7  2FC9               	goto	u10
+   285  07C8                     u11:
+   286  07C8  2FC5               	goto	l562
+   287  07C9                     u10:
+   288                           	
+   289  07C9                     l564:	
+   290                           	line	26
+   291                           ;main.c: 26: TMR1IF=0;
+   292  07C9  100C               	bcf	(96/8),(96)&7
+   293                           	line	27
+   294                           ;main.c: 27: TMR1ON=1;
+   295  07CA  1410               	bsf	(128/8),(128)&7
+   296  07CB  2FCC               	goto	l953
+   297                           	line	28
+   298                           	
+   299  07CC                     l560:	
+   300                           	line	24
+   301                           	
+   302  07CC                     l953:	
+   303  07CC  3001               	movlw	low(01h)
+   304  07CD  02F0               	subwf	(main@count),f
+   305  07CE  3000               	movlw	high(01h)
+   306  07CF  1C03               	skipc
+   307  07D0  03F1               	decf	(main@count+1),f
+   308  07D1  02F1               	subwf	(main@count+1),f
+   309  07D2  30FF               	movlw	high(0FFFFh)
+   310  07D3  0671               	xorwf	((main@count+1)),w
+   311  07D4  1D03               	skipz
+   312  07D5  2FD8               	goto	u25
+   313  07D6  30FF               	movlw	low(0FFFFh)
+   314  07D7  0670               	xorwf	((main@count)),w
+   315  07D8                     u25:
+   316                           
+   317  07D8  1D03               	skipz
+   318  07D9  2FDB               	goto	u21
+   319  07DA  2FDC               	goto	u20
+   320  07DB                     u21:
+   321  07DB  2FC5               	goto	l562
+   322  07DC                     u20:
+   323                           	
+   324  07DC                     l565:	
+   325                           	line	31
+   326                           ;main.c: 28: }
+   327                           ;main.c: 31: RB0=1;
+   328  07DC  1406               	bsf	(48/8),(48)&7
+   329                           	line	32
+   330                           	
+   331  07DD                     l955:	
+   332                           ;main.c: 32: count=61;
+   333  07DD  303D               	movlw	low(03Dh)
+   334  07DE  00F0               	movwf	(main@count)
+   335  07DF  3000               	movlw	high(03Dh)
+   336  07E0  00F1               	movwf	((main@count))+1
+   337                           	line	33
+   338                           ;main.c: 33: while(count-->0){
+   339  07E1  2FEA               	goto	l957
+   340                           	
+   341  07E2                     l567:	
+   342                           	line	34
+   343                           ;main.c: 34: while(TMR1IF!=1);
+   344  07E2  2FE3               	goto	l568
+   345                           	
+   346  07E3                     l569:	
+   347                           	
+   348  07E3                     l568:	
+   349  07E3  1C0C               	btfss	(96/8),(96)&7
+   350  07E4  2FE6               	goto	u31
+   351  07E5  2FE7               	goto	u30
+   352  07E6                     u31:
+   353  07E6  2FE3               	goto	l568
+   354  07E7                     u30:
+   355                           	
+   356  07E7                     l570:	
+   357                           	line	35
+   358                           ;main.c: 35: TMR1IF=0;
+   359  07E7  100C               	bcf	(96/8),(96)&7
+   360                           	line	36
+   361                           ;main.c: 36: TMR1ON=1;
+   362  07E8  1410               	bsf	(128/8),(128)&7
+   363  07E9  2FEA               	goto	l957
+   364                           	line	37
+   365                           	
+   366  07EA                     l566:	
+   367                           	line	33
+   368                           	
+   369  07EA                     l957:	
+   370  07EA  3001               	movlw	low(01h)
+   371  07EB  02F0               	subwf	(main@count),f
+   372  07EC  3000               	movlw	high(01h)
+   373  07ED  1C03               	skipc
+   374  07EE  03F1               	decf	(main@count+1),f
+   375  07EF  02F1               	subwf	(main@count+1),f
+   376  07F0  30FF               	movlw	high(0FFFFh)
+   377  07F1  0671               	xorwf	((main@count+1)),w
+   378  07F2  1D03               	skipz
+   379  07F3  2FF6               	goto	u45
+   380  07F4  30FF               	movlw	low(0FFFFh)
+   381  07F5  0670               	xorwf	((main@count)),w
+   382  07F6                     u45:
+   383                           
+   384  07F6  1D03               	skipz
+   385  07F7  2FF9               	goto	u41
+   386  07F8  2FFA               	goto	u40
+   387  07F9                     u41:
+   388  07F9  2FE3               	goto	l568
+   389  07FA                     u40:
+   390  07FA  2FBD               	goto	l949
+   391                           	
+   392  07FB                     l571:	
+   393  07FB  2FBD               	goto	l949
+   394                           	line	40
+   395                           	
+   396  07FC                     l572:	
+   397                           	line	20
+   398  07FC  2FBD               	goto	l949
+   399                           	
+   400  07FD                     l573:	
+   401                           	line	42
+   402                           	
+   403  07FD                     l574:	
+   404                           	global	start
+   405  07FD  120A  118A  2800   	ljmp	start
+   406                           	opt stack 0
+   407                           GLOBAL	__end_of_main
+   408  0800                     	__end_of_main:
+   409 ;; =============== function _main ends ============
+   410                           
+   411                           	signat	_main,88
+   412                           psect	maintext
+   413                           	global	btemp
+   414  007E                     	btemp set 07Eh
+   415                           
+   416                           	DABS	1,126,2	;btemp
+   417                           	global	wtemp0
+   418  007E                     	wtemp0 set btemp
+
+
+HI-TECH Software PICC Macro Assembler V9.80 build 6738 
+Symbol Table                                                                                   Sat Jul 14 05:54:38 2018
+
+                  u10 07C9                    u11 07C8                    u20 07DC                    u21 07DB  
+                  u30 07E7                    u31 07E6                    u40 07FA                    u41 07F9  
+                  u25 07D8                    u45 07F6                   l560 07CC                   l561 07C4  
+                 l570 07E7                   l562 07C5                   l571 07FB                   l563 07C5  
+                 l572 07FC                   l564 07C9                   l573 07FD                   l565 07DC  
+                 l574 07FD                   l566 07EA                   l567 07E2                   l559 07BD  
+                 l568 07E3                   l569 07E3                   l951 07BF                   l943 07AD  
+                 l953 07CC                   l945 07B5                   l955 07DD                   l947 07B8  
+                 l957 07EA                   l949 07BD                   _RB0 0030                  _main 07AD  
+                btemp 007E                  start 0000                 ?_main 0070                 _TRISB 0086  
+               status 0003                 wtemp0 007E          __end_of_main 0800                ??_main 0070  
+              _T1SYNC 0082                _TMR1IF 0060                _TMR1CS 0081                _TMR1ON 0080  
+      __pcstackCOMMON 0070            __pmaintext 07AD               _T1CKPS0 0084               _T1CKPS1 0085  
+             _T1OSCEN 0083  end_of_initialization 07A9   start_initialization 07A9             main@count 0070  
+       __size_of_main 0053  
